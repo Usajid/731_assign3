@@ -74,7 +74,14 @@ Multi Target Output Linear Regressor Score: 0.326
 
 ### Conclusion
 
-After training and evaluating three regression models (Random Forest, XGBoost, Linear Regressor), in MultiOutputRegressor mode, we found that Random Forest based approach performs the best on all three evaluation metrics (**Mean Absolute Error (MAE):4.54832675696375, Mean Squared Error:36.48255827784976, Regression Score:0.701**). Feature Engineering, including combining and removing different features, also played an important role in improving the overall effectiveness of the system. Please see /notebooks/majorLeague.ipynb for more details.
+# Conclusion
+
+As we have seen above, k-means based clustering process gives quite reasonable results and group similar movies together into one group. For instance, if we look at the following two clustered groups of similar movies:
+
+*Lion King, The (1994), Aladdin (1992), Snow White and the Seven Dwarfs (1937), Beauty and the Beast (1991), Pinocchio (1940), Aristocats, The (1970), Cinderella (1950), Sword in the Stone, The (1963), Mary Poppins (1964), Dumbo (1941), Pete's Dragon (1977), Alice in Wonderland (1951), Fox and the Hound, The (1981), Fantasia (1940), Honey, I Shrunk the Kids (1989), Jungle Book, The (1967), Lady and the Tramp (1955), 101 Dalmatians (One Hundred and One Dalmatians) (1961), Finding Nemo (2003)*
+*Twelve Monkeys (a.k.a. 12 Monkeys) (1995), Stargate (1994), Back to the Future (1985), Back to the Future Part II (1989), Time Bandits (1981), Bill & Ted's Excellent Adventure (1989), Bill & Ted's Bogus Journey (1991), Primer (2004)* 
+
+Thus, we can conclude that, using ratings and tags features, k-means algorithm clusters similar movies together. We can recommend similar movies to different users, based on their interest, using these groups. This is also of real practical value, especially for movie recommendation or product recommendation systems etc.
 
 
 
