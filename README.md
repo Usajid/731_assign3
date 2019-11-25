@@ -18,7 +18,7 @@ If you are interested in only looking at notebook, please access the notebook in
 
 ### Dataset:
 
-I used the NFL dataset for this regression modeling assignment. (Data csv file is in /data/nfl_games.csv)
+I used the movie lens dataset containing separate files for ratings, tags, and movies. (Data csv files are in /data/ directory of this repository).
 
 ### Process:
 
