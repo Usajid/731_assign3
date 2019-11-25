@@ -11,7 +11,7 @@ If you are interested in only looking at notebook, please access the notebook in
 ### Objective:
 
 <ul>
-<li>Pick one dataset from given MovieLens link</li>
+<li>Pick one dataset from the given MovieLens link (https://grouplens.org/datasets/movielens/)</li>
 <li>Do feature engineering as a pre-process for clustering process</li>
 <li>Do clustering based modeling to similar movies together. These groups of similar movies will be at the heart of recommendation system for recommending relevant movies to different users, based on their interest and taste.</li>
 </ul>
