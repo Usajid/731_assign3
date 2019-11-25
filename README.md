@@ -23,11 +23,12 @@ I used the movie lens dataset containing separate files for ratings, tags, and m
 ### Process:
 
 <ul>
-<li>First I did feature engineering. Main feature engineering includes combining/addition of features, and removing redundant/irrelevant features. Please refer to notebook for more details.</li>
-<li>Divided the dataset into training/testing split of 80/20 percentage.</li>
-<li>Trained three regression models separately on the training dataset.</li>
-<li>Finally, evaluated above trained models on testing dataset under three evaluation metrics.</li>
-</ul>
+<li>First I loaded and inspected the three data csv files (movies.csv, ratings.csv, links.csv, tags.csv), so I can explore and combine MOVIES, RATINGS, and TAGS information from them to prepare for the similar movies clustering process. (Please see the /notebooks/movieTrip.ipynb for more details)</li>
+<li>Then, we merge the information from these data frames into a new data frame that contains MOVIES, THEIR RATINGS AND TAGS VECTORS.</li>
+<li>Next, we apply K-Means Clsutering Algorithm on this new Data frame to get 100 clusters, each containing similar movies with similar tags and ratings.</li>
+<li>Next, we analyze the qualitative performane of clustered similar movies groups.</li>
+
+The process and results are detailed as follows, as well as in /notebooks/movieTrip.ipynb notebook.
 
 ### Discussion and Results:
 Since we have to regress scores for both teams (multi-output regression), so I used MultiOutputRegressor module of scikit-learn. Using this module, it outputs multiouput regression values using given Regression model. For this assignment, I trained and evaluated three regression models as follows:
