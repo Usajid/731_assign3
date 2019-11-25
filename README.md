@@ -32,50 +32,116 @@ I used the movie lens dataset containing separate files for ratings, tags, and m
 *The process and results are detailed as follows, as well as in /notebooks/movieTrip.ipynb notebook.*
 
 ### Discussion and Results:
-Since we have to regress scores for both teams (multi-output regression), so I used MultiOutputRegressor module of scikit-learn. Using this module, it outputs multiouput regression values using given Regression model. For this assignment, I trained and evaluated three regression models as follows:
+Since we have three different csv files for three different things, i.e. MOVIES, RATINGS, TAGS. So, first we inspected how we can extract and merge the information for the similar movies clustering process. First five rows for each data frame (MOVIES, RATINGS, TAGS) are as follows:
 
-<ul>
-<li>Random Forest Regressor</li>
-<li>XGBoost Regressor</li>
-<li>Linear Regessor</li>
-</ul>
+movieId	title	genres
 
-Once above regressors were trained, we evaluted them separately on three evaluation metrics,as follows:
+1	Toy Story (1995)	Adventure|Animation|Children|Comedy|Fantasy
 
-<ul>
-<li>Mean Absolute Error (MAE)</li>
-<li>Mean Squared Error (very good in telling about the variance in result values, so more desirable metric)</li>
-<li>Scikit-learn Regression Score (Maximum value = 1.0) </li>
-</ul>
+2	Jumanji (1995)	Adventure|Children|Fantasy
 
-The evaluation results for three regressors are as follows:
+3	Grumpier Old Men (1995)	Comedy|Romance
 
-**Random Forest Regressor:**
+4	Waiting to Exhale (1995)	Comedy|Drama|Romance
 
-MAE: **4.54832675696375**
-
-MSE: **36.48255827784976**
-
-Multi Target Output Random Forest Based Regressor Score: **0.701**
-
-**XGBoost Regressor:**
-
-MAE: 6.956283390349816
-
-MSE: 77.05458382962796
-
-Multi Target Output XGBoost based Regressor Score: 0.37
-
-**Linear Regressor:**
-
-MAE: 7.233133556966823
-
-MSE: 82.39727180323428
-
-Multi Target Output Linear Regressor Score: 0.326
+5	Father of the Bride Part II (1995)	Comedy
 
 
+userId	movieId	rating	timestamp
 
+1	1	4.0	2000-07-30 13:45:03
+
+1	3	4.0	2000-07-30 13:20:47
+
+1	6	4.0	2000-07-30 13:37:04
+
+1	47	5.0	2000-07-30 14:03:35
+
+1	50	5.0	2000-07-30 13:48:51
+
+
+userId	movieId	tag	timestamp
+
+
+0	2	60756	funny	2015-10-24 14:29:54
+
+2	60756	Highly quotable	2015-10-24 14:29:56
+
+2	60756	will ferrell	2015-10-24 14:29:52
+
+2	89774	Boxing story	2015-10-24 14:33:27
+
+2	89774	MMA	2015-10-24 14:33:20
+
+
+Then, we also inpect top 20 movie tags, given as follows:
+
+**Top 20 Movie Tags**
+
+innetflixqueue       131
+
+atmospheric           41
+
+thoughtprovoking      25
+
+surreal               24
+
+funny                 24
+
+scifi                 24
+
+superhero             24
+
+disney                23
+
+religion              22
+
+quirky                22
+
+psychology            21
+
+darkcomedy            21
+
+suspense              21
+
+visuallyappealing     20
+
+twistending           20
+
+crime                 19
+
+comedy                19
+
+politics              19
+
+timetravel            18
+
+highschool            17
+
+Then, we **MERGED** the required columns from these dataframes and also **dropped NA** valued rows. Finally, the merged dataframe to be used for clustering process was obtained (PLease see /notebooks/movieTrip.ipynb for more details). First five rows of merged dataframe are as follows:
+
+movieId title |	userId |	rating	tag
+
+102653	187595	Solo: A Star Wars Story (2018)	62.0	4.0	starwars
+
+102682	193565	Gintama: The Movie (2010)	184.0	3.5	anime
+
+102683	193565	Gintama: The Movie (2010)	184.0	3.5	comedy
+
+102684	193565	Gintama: The Movie (2010)	184.0	3.5	gintama
+
+102685	193565	Gintama: The Movie (2010)	184.0	3.5	remaster
+
+
+This final dataframe has folliwng interesting insights:
+
+**Unique Users :  54**
+
+**Unique Movies :  1464**
+
+**Unique Tags :  1424**
+
+Before the clustering algorithm start, one alst thing I did was to produce the tags vectors as strings/categrical values are unacceptable in such algortihms. We used TfidfVectorizer feature of scikit-learn library for that.
 
 **CLUSTER | MOVIES IN THE CLUSTER**
 
