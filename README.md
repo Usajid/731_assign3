@@ -75,8 +75,10 @@ Multi Target Output Linear Regressor Score: 0.326
 
 
 
-
+<pre>
 **CLUSTER         	MOVIES IN THE CLUSTER**
+</pre>
+
 
 0	0	Little Princess, A (1995), Song of the Little ...
 
