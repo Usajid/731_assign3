@@ -59,7 +59,7 @@ This final dataframe also has some interesting insights, as follows:
 **Unique Tags :  1424**
 
 
-Before the clustering algorithm start, one alst thing I did was to produce the tags vectors as strings/categrical values are unacceptable in such algortihms. We used TfidfVectorizer feature of scikit-learn library for that.To group similar movies and recommend movies to the users, I am using **RATINGS** and **TAGS** features that are really helpful for such recommendation system. So, once we get the clusters/groups, then we can recommend similar movies using those clusters. So, the **k-means algorithm** is being used for clustering simiar movies together. The input to the alogrithm would be movies vector of tags and ratings. Consequently, k-means clustered the similar movies together. In the end, we get **100 groups of similar movies** after clustering process. 
+Before the actual clustering algorithm start, one last pre-processing and mandatory thing I did was to produce the tags vectors as strings/categrical values are unacceptable in such algortihms. We used TfidfVectorizer feature of scikit-learn library for that.To group similar movies and recommend movies to the users, I am using **RATINGS** and **TAGS** features that are really helpful for such recommendation system. So, once we get the clusters/groups, then we can recommend similar movies using those clusters. So, the **k-means algorithm** is being used for clustering simiar movies together. The input to the alogrithm would be movies vector of tags and ratings. Consequently, k-means clustered the similar movies together. In the end, we get **100 groups of similar movies** after clustering process. 
 
 First and last few clusters have been shown as follows:
 
