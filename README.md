@@ -27,8 +27,9 @@ I used the movie lens dataset containing separate files for ratings, tags, and m
 <li>Then, we merge the information from these data frames into a new data frame that contains MOVIES, THEIR RATINGS AND TAGS VECTORS.</li>
 <li>Next, we apply K-Means Clsutering Algorithm on this new Data frame to get 100 clusters, each containing similar movies with similar tags and ratings.</li>
 <li>Next, we analyze the qualitative performane of clustered similar movies groups.</li>
+ </ul>
 
-The process and results are detailed as follows, as well as in /notebooks/movieTrip.ipynb notebook.
+*The process and results are detailed as follows, as well as in /notebooks/movieTrip.ipynb notebook.*
 
 ### Discussion and Results:
 Since we have to regress scores for both teams (multi-output regression), so I used MultiOutputRegressor module of scikit-learn. Using this module, it outputs multiouput regression values using given Regression model. For this assignment, I trained and evaluated three regression models as follows:
