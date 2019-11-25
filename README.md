@@ -36,17 +36,17 @@ Since we have three different csv files for three different things, i.e. MOVIES,
 
 Then, we **MERGED** the required columns from these dataframes and also **dropped NA** valued rows. Finally, the merged dataframe to be used for clustering process was obtained (PLease see /notebooks/movieTrip.ipynb for more details). First five rows of merged dataframe are as follows:
 
-movieId | title |	userId |	rating	tag
+movieId | title |	userId |	rating	| tag
 
-187595	Solo: A Star Wars Story (2018)	62.0	4.0	starwars
+187595 |	Solo: A Star Wars Story (2018) |	62.0 |	4.0 |	starwars
 
-193565	Gintama: The Movie (2010)	184.0	3.5	anime
+193565 |	Gintama: The Movie (2010) |	184.0 |	3.5 |	anime
 
-193565	Gintama: The Movie (2010)	184.0	3.5	comedy
+193565 |	Gintama: The Movie (2010)	184.0 |	3.5 |	comedy
 
-193565	Gintama: The Movie (2010)	184.0	3.5	gintama
+193565 |	Gintama: The Movie (2010)	184.0 |	3.5 |	gintama
 
-193565	Gintama: The Movie (2010)	184.0	3.5	remaster
+193565 |	Gintama: The Movie (2010) |	184.0|	3.5 |	remaster
 
 
 
