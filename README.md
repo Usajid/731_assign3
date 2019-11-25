@@ -72,7 +72,6 @@ MSE: 82.39727180323428
 
 Multi Target Output Linear Regressor Score: 0.326
 
-### Conclusion
 
 # Conclusion
 
