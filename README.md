@@ -18,7 +18,7 @@ If you are interested in only looking at notebook, please access the notebook in
 
 ### Dataset:
 
-I used the movie lens dataset containing separate files for ratings, tags, and movies. (Data csv files are in /data/ directory of this repository).
+I used the movie lens small dataset (http://files.grouplens.org/datasets/movielens/ml-latest-small.zip) containing separate files for ratings, tags, and movies. (Data csv files are in /data/ directory of this repository).
 
 ### Process:
 
