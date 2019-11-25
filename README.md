@@ -75,7 +75,7 @@ Multi Target Output Linear Regressor Score: 0.326
 
 
 
-**CLUSTER         	MOVIES IN THE CLUSTER**
+**CLUSTER | MOVIES IN THE CLUSTER**
 
 0	Little Princess, A (1995), Song of the Little ...
 
@@ -93,7 +93,7 @@ Multi Target Output Linear Regressor Score: 0.326
 
 7	Batman Forever (1995), Batman (1989), Batman R...
 
-8	8	Thin Blue Line, The (1988), L.A. Confidential ...
+8	Thin Blue Line, The (1988), L.A. Confidential ...
 
 9	Moonrise Kingdom (2012), History of Future Fol...
 
