@@ -59,7 +59,7 @@ This final dataframe also has some interesting insights, as follows:
 **Unique Tags :  1424**
 
 
-Before the actual clustering algorithm start, one last pre-processing and mandatory thing I did was to produce the tags vectors as strings/categrical values are unacceptable in such algortihms. We used TfidfVectorizer feature of scikit-learn library for that.To group similar movies and recommend movies to the users, I am using **RATINGS** and **TAGS** features that are really helpful for such recommendation system. So, once we get the clusters/groups, then we can recommend similar movies using those clusters. So, the **k-means algorithm** is being used for clustering simiar movies together. The input to the alogrithm would be movies vector of tags and ratings. Consequently, k-means clustered the similar movies together. In the end, we get **100 groups of similar movies** after clustering process. 
+Before the actual clustering algorithm start, one last pre-processing and mandatory thing I did was to produce the tags vectors as strings/categorical values are unacceptable in such scenarios. We used *TfidfVectorizer* feature of *scikit-learn library* for that. To group similar movies and recommend movies to the users, I am using **RATINGS** and **TAGS** features that are really helpful for such recommendation system. Once we get the clusters/groups, then we can recommend similar movies using those clusters. So, the **k-means algorithm** is being used for clustering simiar movies together. The input to the alogrithm would be the movies tags vectors and ratings. Consequently, the k-means algorithm clustered the similar movies together. In the end, we get **100 groups of similar movies** after the clustering process. 
 
 First and last few clusters have been shown as follows:
 
@@ -127,9 +127,9 @@ First and last few clusters have been shown as follows:
 99	Father of the Bride Part II (1995), Angie (199...
 
 
-If we analyze top keywords being used in each of first 10 clusters, then results are as follows:
+If we analyze top keywords being used in each of the first 10 clusters, then results are as follows:
 
-Top terms/words per cluster:
+**Top terms/words per cluster:**
 
 **Cluster :  1**
  
@@ -252,7 +252,7 @@ fantasyworld
 
 farfetched
 
-As you can see above, the keywords in each cluster show that the clustering process is doing a pretty reasonable job. Now, if we look into one of the clusters for seeing the movies in that group, we get following result:
+As you can see above, the keywords in each cluster show that the clustering process is doing a pretty reasonable job. Now, if we look into one of the clusters for seeing the (similar) movies in that group, we get the following result:
 
 *Lion King, The (1994), Aladdin (1992), Snow White and the Seven Dwarfs (1937), Beauty and the Beast (1991), Pinocchio (1940), Aristocats, The (1970), Cinderella (1950), Sword in the Stone, The (1963), Mary Poppins (1964), Dumbo (1941), Pete's Dragon (1977), Alice in Wonderland (1951), Fox and the Hound, The (1981), Fantasia (1940), Honey, I Shrunk the Kids (1989), Jungle Book, The (1967), Lady and the Tramp (1955), 101 Dalmatians (One Hundred and One Dalmatians) (1961), Finding Nemo (2003)* 
 
@@ -272,7 +272,7 @@ As we have seen above, k-means based clustering process gives quite reasonable r
 
 *Twelve Monkeys (a.k.a. 12 Monkeys) (1995), Stargate (1994), Back to the Future (1985), Back to the Future Part II (1989), Time Bandits (1981), Bill & Ted's Excellent Adventure (1989), Bill & Ted's Bogus Journey (1991), Primer (2004)* 
 
-Thus, we can conclude that, using ratings and tags features, k-means algorithm clusters similar movies together. We can recommend similar movies to different users, based on their interest, using these groups. This is also of real practical value, especially for movie recommendation or product recommendation systems etc.
+Thus, we can conclude that k-means algorithm, using ratings and tags features, clusters the similar movies together. We can recommend similar movies in a cluster to different users, based on their interest, using these groups. This is also of real practical value, especially for movie recommendation or product recommendation systems etc.
 
 
 
