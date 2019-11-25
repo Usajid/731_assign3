@@ -11,9 +11,9 @@ If you are interested in only looking at notebook, please access the notebook in
 ### Objective:
 
 <ul>
-<li>Pick one dataset from given various leagues like NFL, MLB, NBA and Soccer</li>
-<li>Do feature engineering as a pre-process for regression modeling</li>
-<li>Do regression based modeling to determine scores of each team</li>
+<li>Pick one dataset from given MovieLens link</li>
+<li>Do feature engineering as a pre-process for clustering process</li>
+<li>Do clustering based modeling to similar movies together. These groups of similar movies will be at the heart of recommendation system for recommending relevant movies to different users, based on their interest and taste.</li>
 </ul>
 
 ### Dataset:
