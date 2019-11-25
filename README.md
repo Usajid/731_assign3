@@ -120,89 +120,17 @@ highschool            17
 
 Then, we **MERGED** the required columns from these dataframes and also **dropped NA** valued rows. Finally, the merged dataframe to be used for clustering process was obtained (PLease see /notebooks/movieTrip.ipynb for more details). First five rows of merged dataframe are as follows:
 
-movieId title |	userId |	rating	tag
+movieId | title |	userId |	rating	tag
 
-102653	187595	Solo: A Star Wars Story (2018)	62.0	4.0	starwars
+187595	Solo: A Star Wars Story (2018)	62.0	4.0	starwars
 
-102682	193565	Gintama: The Movie (2010)	184.0	3.5	anime
+193565	Gintama: The Movie (2010)	184.0	3.5	anime
 
-102683	193565	Gintama: The Movie (2010)	184.0	3.5	comedy
+193565	Gintama: The Movie (2010)	184.0	3.5	comedy
 
-102684	193565	Gintama: The Movie (2010)	184.0	3.5	gintama
+193565	Gintama: The Movie (2010)	184.0	3.5	gintama
 
-102685	193565	Gintama: The Movie (2010)	184.0	3.5	remaster
-
-
-
-"<div>\n",
-       "<style scoped>\n",
-       "    .dataframe tbody tr th:only-of-type {\n",
-       "        vertical-align: middle;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe tbody tr th {\n",
-       "        vertical-align: top;\n",
-       "    }\n",
-       "\n",
-       "    .dataframe thead th {\n",
-       "        text-align: right;\n",
-       "    }\n",
-       "</style>\n",
-       "<table border=\"1\" class=\"dataframe\">\n",
-       "  <thead>\n",
-       "    <tr style=\"text-align: right;\">\n",
-       "      <th></th>\n",
-       "      <th>movieId</th>\n",
-       "      <th>title</th>\n",
-       "      <th>userId</th>\n",
-       "      <th>rating</th>\n",
-       "      <th>tag</th>\n",
-       "    </tr>\n",
-       "  </thead>\n",
-       "  <tbody>\n",
-       "    <tr>\n",
-       "      <th>102653</th>\n",
-       "      <td>187595</td>\n",
-       "      <td>Solo: A Star Wars Story (2018)</td>\n",
-       "      <td>62.0</td>\n",
-       "      <td>4.0</td>\n",
-       "      <td>starwars</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>102682</th>\n",
-       "      <td>193565</td>\n",
-       "      <td>Gintama: The Movie (2010)</td>\n",
-       "      <td>184.0</td>\n",
-       "      <td>3.5</td>\n",
-       "      <td>anime</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>102683</th>\n",
-       "      <td>193565</td>\n",
-       "      <td>Gintama: The Movie (2010)</td>\n",
-       "      <td>184.0</td>\n",
-       "      <td>3.5</td>\n",
-       "      <td>comedy</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>102684</th>\n",
-       "      <td>193565</td>\n",
-       "      <td>Gintama: The Movie (2010)</td>\n",
-       "      <td>184.0</td>\n",
-       "      <td>3.5</td>\n",
-       "      <td>gintama</td>\n",
-       "    </tr>\n",
-       "    <tr>\n",
-       "      <th>102685</th>\n",
-       "      <td>193565</td>\n",
-       "      <td>Gintama: The Movie (2010)</td>\n",
-       "      <td>184.0</td>\n",
-       "      <td>3.5</td>\n",
-       "      <td>remaster</td>\n",
-       "    </tr>\n",
-       "  </tbody>\n",
-       "</table>\n",
-       "</div>"
+193565	Gintama: The Movie (2010)	184.0	3.5	remaster
 
 
 
@@ -214,7 +142,11 @@ This final dataframe has folliwng interesting insights:
 
 **Unique Tags :  1424**
 
-Before the clustering algorithm start, one alst thing I did was to produce the tags vectors as strings/categrical values are unacceptable in such algortihms. We used TfidfVectorizer feature of scikit-learn library for that.
+
+Before the clustering algorithm start, one alst thing I did was to produce the tags vectors as strings/categrical values are unacceptable in such algortihms. We used TfidfVectorizer feature of scikit-learn library for that.To group similar movies and recommend movies to the users, I am using **RATINGS** and **TAGS** features that are really helpful for such recommendation system. So, once we get the clusters/groups, then we can recommend similar movies using those clusters. So, the **k-means algorithm** is being used for clustering simiar movies together. The input to the alogrithm would be movies vector of tags and ratings. Consequently, k-means clustered the similar movies together. In the end, we get **100 groups of similar movies** after clustering process. 
+
+First and last few clusters have been shown as follows:
+
 
 **CLUSTER | MOVIES IN THE CLUSTER**
 
@@ -277,6 +209,134 @@ Before the clustering algorithm start, one alst thing I did was to produce the t
 98	Seven (a.k.a. Se7en) (1995), Game, The (1997),...
 
 99	Father of the Bride Part II (1995), Angie (199...
+
+
+If we analyze top keywords being used in each of first 10 clusters, then results are as follows:
+
+Top terms/words per cluster:
+
+**Cluster :  1**
+ 
+ india
+ 
+ girlpower
+ 
+ cinematography
+ 
+ england
+ 
+ surreal
+
+**Cluster :  2**
+ 
+ stephenking
+ 
+ prom
+ 
+ highschool
+ 
+ firefly
+ 
+ fathersonrelationship
+
+**Cluster :  3**
+ 
+ politics
+ 
+ president
+ 
+ africa
+ 
+ business
+ 
+ fbi
+
+**Cluster :  4**
+ 
+ journalism
+ 
+ zooeydeschanel
+ 
+ fbi
+ 
+ fantasyworld
+ 
+ farfetched
+
+**Cluster :  5**
+ 
+ innetflixqueue
+ 
+ televangelist
+ 
+ courtroomdrama
+ 
+ janeausten
+ 
+ biopic
+
+**Cluster :  6**
+ 
+ ghosts
+ 
+ iseedeadpeople
+ 
+ brucewillis
+ 
+ stylized
+ 
+ imdbtop250
+
+**Cluster :  7**
+ 
+ disney
+ 
+ nanny
+ 
+ kingarthur
+ 
+ fish
+ 
+ heartwarming
+
+**Cluster :  8**
+ 
+ superhero
+ 
+ amyadams
+ 
+ marvel
+ 
+ hughjackman
+ 
+ comicbook
+
+**Cluster :  9**
+ 
+ police
+ 
+ drugs
+ 
+ murder
+ 
+ innetflixqueue
+ 
+ action
+
+
+**Cluster :  10**
+
+quirky
+
+zooeydeschanel
+
+family
+
+fantasyworld
+
+farfetched
+
+As you can see above, the keywords in each cluster show that the clustering process is doing a pretty reasonable job.
 
 
 
