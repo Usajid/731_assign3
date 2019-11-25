@@ -50,7 +50,7 @@ movieId | title |	userId |	rating	| tag
 
 
 
-This final dataframe has folliwng interesting insights:
+This final dataframe also has some interesting insights, as follows:
 
 **Unique Users :  54**
 
