@@ -36,6 +36,8 @@ Since we have three different csv files for three different things, i.e. MOVIES,
 
 Then, we **MERGED** the required columns from these dataframes and also **dropped NA** valued rows. Finally, the merged dataframe to be used for clustering process was obtained (PLease see /notebooks/movieTrip.ipynb for more details). First five rows of merged dataframe are as follows:
 
+![](figs/fig6u.png)
+
 movieId | title |	userId |	rating	| tag
 
 187595 |	Solo: A Star Wars Story (2018) |	62.0 |	4.0 |	starwars
