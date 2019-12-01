@@ -38,19 +38,6 @@ Then, we **MERGED** the required columns from these dataframes and also **droppe
 
 ![](figs/fig6u.png)
 
-movieId | title |	userId |	rating	| tag
-
-187595 |	Solo: A Star Wars Story (2018) |	62.0 |	4.0 |	starwars
-
-193565 |	Gintama: The Movie (2010) |	184.0 |	3.5 |	anime
-
-193565 |	Gintama: The Movie (2010)	184.0 |	3.5 |	comedy
-
-193565 |	Gintama: The Movie (2010)	184.0 |	3.5 |	gintama
-
-193565 |	Gintama: The Movie (2010) |	184.0|	3.5 |	remaster
-
-
 
 This final dataframe also has some interesting insights, as follows:
 
